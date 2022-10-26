@@ -13,25 +13,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "people")
 public class Person {
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "username")
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "birthyear")
+    @Column(name = "birthyear", nullable = false)
     private int birthyear;
 
-    public Person(String username, int birthyear) {
-        this.username = username;
-        this.birthyear = birthyear;
-    }
-
+    @Column(name = "password", nullable = false)
+    private String password;
 
 }

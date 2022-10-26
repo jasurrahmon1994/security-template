@@ -1,18 +1,20 @@
 package security_demo.security;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import security_demo.models.Person;
 
 import java.util.Collection;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+
 public class PersonDetails implements UserDetails {
-
-    private final Person person;
-
-    public PersonDetails(Person person) {
-        this.person = person;
-    }
+    private Person person;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -47,9 +49,5 @@ public class PersonDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public Person getPerson() {
-        return this.person;
     }
 }

@@ -5,6 +5,6 @@ import security_demo.models.Person;
 
 import java.util.Optional;
 
-public interface PeopleRepo extends JpaRepository<Person, Integer> {
+public interface PeopleRepository extends JpaRepository<Person, Integer> {
     Optional<Person> findByUsername(String username);
 }
